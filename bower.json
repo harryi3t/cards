@@ -1,0 +1,31 @@
+{
+  "name": "cards",
+  "homepage": "https://github.com/harryi3t/cards",
+  "authors": [
+    "harryi3t <66hari@gmail.com>"
+  ],
+  "description": "Angular Demo App showing use of templates",
+  "main": "app.js",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "angular",
+    "templates",
+    "cards"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4"
+  }
+}

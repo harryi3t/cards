@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cards</title>
+    
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link href="app.css" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript" src='bower_components/jquery/dist/jquery.min.js'></script>
+    <script type="text/javascript" src='bower_components/angular/angular.min.js'></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  
+  <body ng-app="cardsApp">
+    <div class="container" ng-controller="mainController">
+      
+      <span id='title'><h1>All Projects</h1></span>
+      <div class='main-icons' ng-click='deleteAllStatus()'>
+        <span class='glyphicon glyphicon-trash'></span>Delete All Cards
+      </div>
+      <div class='main-icons' ng-click='addNewStatus()'>
+        <span class='glyphicon glyphicon-plus'></span>Add New Status
+      </div>
+      
+      <div id="mainContent">
+
+        <div class="row">
+          <div class="col-xs-18 col-sm-6 col-md-3 status-card" ng-repeat="statusCard in statusCards">
+
+            <div class="modal fade" tabindex="-1" role="dialog" id="modal-{{statusCard.id}}">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                  <div class="form-group">
+                    <label for="message-text" class="control-label">Input value:</label>
+                    <input type="text" class="form-control message-input" id="message-input-{{statusCard.id}}" ng-model="statusCard.title">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="thumbnail">
+              <span class="card-header">
+                {{statusCard.title}}
+
+                <div class="dropdown">
+                  <span class="card-icon glyphicon glyphicon-cog dropdown-toggle"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></span>
+                  <ul class="dropdown-menu">
+                    <li><a href="#" ng-click="editStatusCardTitle(statusCard)">Edit</a></li>
+                    <li><a href="#" ng-click="deleteAllCards(statusCard)">Delete All Cards</a></li>
+                    <li><a href="#" ng-click="deleteList(statusCard)">Delete List</a></li>
+                  </ul>
+                </div>
+
+              </span>
+              
+              <div class="caption" ng-repeat="card in statusCard.cards">
+                <div class="card-text">
+                  <p>{{card.id}} {{card.text}}</p>
+                  <span class="glyphicon glyphicon-trash card-text-icon" ng-click="deleteCard(statusCard,card)"></span>
+                  <span class="glyphicon glyphicon-pencil card-text-icon" ng-click="editCardText(card)"></span>
+                </div>
+              </div>
+              <button class="btn btn-primary click-button" ng-click="addNewCard(statusCard)">Add Card</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </body>
+  </html>

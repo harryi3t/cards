@@ -1,0 +1,52 @@
+body{
+background-color: #D8D8E3;
+}
+.main-icons{
+float:right;
+margin: 20px 20px;
+}
+#title{
+float:left;
+}
+#mainContent{
+clear:both;
+}
+.card-header{
+color: white;
+background-color: #015191;
+display: block;
+padding: 10px;
+margin-bottom: 10px;
+}
+.card-icon{
+float:right;
+margin-top: -15px;
+}
+.card-text{
+background-color: #D0E9F5;
+padding:10px 10px 25px 10px;
+border-radius: 10px;
+}
+.card-text-icon{
+float:right;
+margin-right: 10px;
+}
+.status-card{
+float:left;
+padding: 1px;
+border-radius: 5px;
+margin-left: 10px;
+}
+.glyphicon{
+cursor: pointer;
+}
+.open>.dropdown-menu {
+margin-left: 200px;
+}
+.click-button{
+padding: 10px;
+margin-left: 10px;
+}
+.modal-content{
+  padding: 20px 10px;
+}
